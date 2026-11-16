@@ -1,0 +1,42 @@
+% All identities, institutions, projects and achievements are fictional examples.
+\ResumeSection{\textit{Education}}
+\ResumeEntry{\textbf{Hailan Institute of Technology}\quad B.Eng. in Computer Science}{Sep 2022 -- Jun 2026}
+\ResumeText{\textbf{Academic record:} GPA 3.78/4.00; top 10\% of cohort. University Merit Scholarship, 2024 and 2025.}
+\ResumeText{\textbf{Coursework:} Algorithms, Operating Systems, Computer Networks, Databases, Distributed Systems, Machine Learning.}
+
+\SectionGap
+\ResumeSection{\textit{Experience}}
+\ResumeEntry{\textbf{Cloudstack Labs}\quad Software Engineering Intern, Data Infrastructure}{Jun 2025 -- Sep 2025}
+\ResumeItem{\textbf{Asynchronous processing:} Built features for a multi-tenant task service using Go, PostgreSQL and Redis, including task state APIs and retry workflows.}
+\ResumeSubItem{Added idempotency keys and exponential backoff; reduced duplicate execution from 0.8\% to below 0.1\% in replay tests covering 200,000 daily tasks.}
+\ResumeItem{\textbf{Performance:} Tuned hot-path queries and composite indexes, reducing API P95 latency from 240 ms to 135 ms; added tracing and queue backlog alerts.}
+\ProjectGap
+\ResumeEntry{\textbf{Starlake Software}\quad Data Engineering Intern, Analytics Platform}{Jul 2024 -- Sep 2024}
+\ResumeItem{\textbf{Data quality:} Added null, uniqueness and freshness checks to 12 daily pipelines and integrated validation into Airflow workflows.}
+\ResumeItem{\textbf{Incremental ingestion:} Replaced full refreshes with watermark-based loads and backfills in Python and SQL; reduced routine processing time from 48 to 19 minutes.}
+
+\SectionGap
+\ResumeSection{\textit{Projects}}
+\ResumeEntry{\textbf{QueuePilot | Distributed Task Queue}\quad \ProjectLink{https://example.com/code/queuepilot}{queuepilot}}{Oct 2025 -- Feb 2026}
+\ResumeItem{\textbf{Architecture:} Implemented producers, a scheduler and workers in Go with delayed jobs, priorities, lease renewal and a dead-letter queue.}
+\ResumeSubItem{Used at-least-once delivery with idempotent handlers; validated recovery from worker crashes through fault injection.}
+\ResumeSubItem{Reached 3,200 tasks/s with 8 workers on a local 4-core, 8 GB test host; measured scheduler P95 latency below 80 ms.}
+\ResumeItem{\textbf{Delivery:} Packaged a reproducible setup with Docker Compose, integration tests, benchmarks and automated checks through GitHub Actions.}
+\ProjectGap
+\ResumeEntry{\textbf{TraceLens | Service Log Explorer}\quad \ResumeLink{https://example.com/demo/tracelens}{Live demo}}{Mar 2025 -- May 2025}
+\ResumeItem{\textbf{Search:} Built a structured log interface with FastAPI, OpenSearch and React, supporting filters by time range, service and error code.}
+\ResumeSubItem{Added role-based access control and sensitive-field masking; validated pagination, aggregation and result consistency on 2 million synthetic logs.}
+\ResumeItem{\textbf{Quality:} Added API contract tests and browser regression checks; documented common incident triage workflows in an operational playbook.}
+
+\SectionGap
+\ResumeSection{\textit{Technical Skills}}
+\begingroup\CompactItems
+\ResumeItem{\textbf{Languages \& frameworks:} Go, Python, TypeScript, SQL; FastAPI and React; comfortable reading and maintaining Java services.}
+\ResumeItem{\textbf{Systems \& tools:} Linux, Git, Docker, PostgreSQL, Redis, message queues, service monitoring and continuous integration.}
+\ResumeItem{\textbf{Collaboration:} Technical documentation, design reviews, code reviews, incident retrospectives and cross-team API agreements.}
+\endgroup
+\SectionGap
+\ResumeSection{\textit{Awards \& Activities}}
+\ResumeText{First Prize, Hailan Software Innovation Challenge (2025). University open-source club maintainer (2024--2026); hosted 6 code-reading and technical sharing sessions.}
+\vskip6pt
+\ResumeText{\color{secondary}\fontsize{8}{10}\selectfont Fictional sample: all identities, institutions, projects and metrics are invented. Contact details and links are placeholders.}

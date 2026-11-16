@@ -1,0 +1,42 @@
+% 本文件中的人物、学校、公司、项目与成果均为虚构示例。
+\ResumeSection{教育背景}{Education}
+\ResumeEntry{\textbf{海岚理工大学}\quad 计算机科学与技术\quad 工学学士}{2022.09 -- 2026.06}
+\ResumeText{\textbf{学业表现：}GPA 3.78/4.00，专业前 10\%；获校级优秀学生奖学金（2024、2025）。}
+\ResumeText{\textbf{核心课程：}数据结构与算法、操作系统、计算机网络、数据库系统、分布式系统、机器学习。}
+
+\SectionGap
+\ResumeSection{实习经历}{Experience}
+\ResumeEntry{\textbf{云栈科技}\quad 后端开发实习生\quad 数据基础设施组}{2025.06 -- 2025.09}
+\ResumeItem{\textbf{异步任务平台：}参与多租户任务服务开发，使用 Go、PostgreSQL 与 Redis 实现任务编排、状态查询和失败重试。}
+\ResumeSubItem{补充幂等键与指数退避机制；在每日 20 万次任务的回放测试中，重复执行率由 0.8\% 降至 0.1\% 以下。}
+\ResumeItem{\textbf{性能与可观测性：}优化热点查询与复合索引，接口 P95 延迟由 240 ms 降至 135 ms；增加追踪与队列积压告警。}
+\ProjectGap
+\ResumeEntry{\textbf{星湖软件}\quad 数据工程实习生\quad 分析平台组}{2024.07 -- 2024.09}
+\ResumeItem{\textbf{数据质量：}为 12 条每日批处理链路补充空值、唯一性和新鲜度检查，将质量校验纳入 Airflow 工作流。}
+\ResumeItem{\textbf{增量处理：}使用 Python 与 SQL 改造全量同步任务，加入水位线与回补机制；日常处理耗时由 48 分钟降至 19 分钟。}
+
+\SectionGap
+\ResumeSection{项目经历}{Projects}
+\ResumeEntry{\textbf{QueuePilot 分布式任务队列}\quad \ProjectLink{https://example.com/code/queuepilot}{queuepilot}}{2025.10 -- 2026.02}
+\ResumeItem{\textbf{系统设计：}以 Go 实现生产者、调度器与工作节点，支持延时任务、优先级队列、租约续期和失败任务隔离。}
+\ResumeSubItem{采用至少一次投递语义，以幂等处理避免业务重复写入；通过故障注入验证工作节点崩溃后的任务恢复。}
+\ResumeSubItem{在 4 核 8 GB 本地测试环境下，8 个工作节点处理吞吐达 3,200 tasks/s，调度 P95 延迟低于 80 ms。}
+\ResumeItem{\textbf{工程实践：}使用 Docker Compose 提供一键启动，编写集成测试与基准测试，并通过 GitHub Actions 自动执行检查。}
+\ProjectGap
+\ResumeEntry{\textbf{TraceLens 服务日志检索平台}\quad \ResumeLink{https://example.com/demo/tracelens}{在线演示}}{2025.03 -- 2025.05}
+\ResumeItem{\textbf{检索服务：}使用 FastAPI、OpenSearch 与 React 搭建结构化日志查询界面，支持时间范围、服务名与错误码组合筛选。}
+\ResumeSubItem{实现基于角色的访问控制与敏感字段脱敏；使用 200 万条合成日志验证分页、聚合与查询结果一致性。}
+\ResumeItem{\textbf{质量保障：}补充 API 契约测试与浏览器端回归测试，将常见问题定位过程整理成可复用的排查手册。}
+
+\SectionGap
+\ResumeSection{专业技能}{Skills}
+\begingroup\CompactItems
+\ResumeItem{\textbf{语言与框架：}Go、Python、TypeScript、SQL；熟悉 FastAPI、React，能够阅读并维护 Java 服务。}
+\ResumeItem{\textbf{系统与工具：}Linux、Git、Docker、PostgreSQL、Redis、消息队列；了解服务监控与持续集成。}
+\ResumeItem{\textbf{协作与沟通：}具备英文技术文档阅读与设计文档写作能力；重视代码评审、问题复盘与接口约定。}
+\endgroup
+\SectionGap
+\ResumeSection{荣誉与活动}{Awards \& Activities}
+\ResumeText{海岚理工大学软件创新赛一等奖（2025）；校开源社团维护者（2024--2026），组织 6 次代码阅读与技术分享。}
+\vskip6pt
+\ResumeText{\color{secondary}\fontsize{8}{10}\selectfont 虚构样板：所有人物、机构、项目与指标均为排版演示；联系方式和链接为示例地址。}

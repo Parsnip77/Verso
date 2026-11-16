@@ -1,0 +1,9 @@
+build/
+*.zip
+.DS_Store
+*.aux
+*.log
+*.out
+*.synctex.gz
+*.fls
+*.fdb_latexmk

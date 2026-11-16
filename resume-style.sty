@@ -1,0 +1,95 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{resume-style}[2026/10/14 Compact Chinese resume]
+\RequirePackage[a4paper,left=12.7mm,right=12.7mm,top=20bp,bottom=28bp,noheadfoot]{geometry}
+\RequirePackage{fontspec}
+\RequirePackage{xeCJK}
+\RequirePackage{xcolor}
+\RequirePackage{fontawesome5}
+\RequirePackage{graphicx}
+\RequirePackage[unicode]{hyperref}
+% 参考 17：英文正文 Latin Modern Roman，日期使用同族真斜体。
+\setmainfont[Path=fonts/,Extension=.otf,UprightFont=lmroman10-regular,
+  BoldFont=lmroman10-bold,ItalicFont=lmroman10-italic,BoldItalicFont=lmroman10-bolditalic,
+  SizeFeatures={{Size={-9.5},Font=lmroman9-regular,
+    BoldFont=lmroman9-bold,ItalicFont=lmroman9-italic},
+    {Size={9.5-},Font=lmroman10-regular}}]{lmroman10-regular}
+\setCJKmainfont[Path=fonts/,BoldFont=FandolHei-Regular.otf]{FandolSong-Regular.otf}
+\setCJKsansfont[Path=fonts/,BoldFont=FandolHei-Regular.otf]{FandolHei-Regular.otf}
+\setCJKmonofont[Path=fonts/]{FandolHei-Regular.otf}
+\setCJKfamilyfont{resume-title}[Path=fonts/,Script=Default,BoldFont=FandolSong-Bold.otf,
+  ItalicFont=FandolKai-Regular.otf]{FandolSong-Regular.otf}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\definecolor{accent}{HTML}{000000}
+\definecolor{secondary}{HTML}{444444}
+\definecolor{linkblue}{rgb}{0,0.31,0.565}
+\hypersetup{colorlinks=true,urlcolor=linkblue,linkcolor=linkblue,
+  pdftitle={Fictional Tech Resume Template},pdfauthor={Template Example}}
+\newcommand{\ResumeDate}[1]{{\normalfont\itshape\CJKfamily{resume-title}#1}}
+\newcommand{\ResumeLink}[2]{\href{#1}{\textbf{#2}\nobreak\hspace{.25em}%
+  \raisebox{.1ex}{\scalebox{.8}{\faExternalLink*}}}}
+\newcommand{\ProjectLink}[2]{\ResumeLink{#1}{\faGithub\enspace #2}}
+
+% 内容采用正常段落换行，没有把正文固定到页面坐标。
+% 外层各内容块独立控制间距，块内保留自然断行。
+\newcommand{\BodyFont}{\normalfont\fontsize{9}{13.343}\selectfont\lineskiplimit=0pt\lineskip=1pt}
+\newcommand{\EntryFont}{\normalfont\fontsize{9.5}{17}\selectfont}
+\newlength{\EntryIndent}
+\setlength{\EntryIndent}{2.5pt}
+\newcommand{\ResumeHeader}[3]{%
+  \par\offinterlineskip
+  \vbox to 68.31bp{%
+    \hbox to \linewidth{\hfil{\color{accent}\sffamily\fontsize{21}{25}\selectfont #1}\hfil}%
+    \vskip7pt
+    \hbox to \linewidth{\hfil{\BodyFont\color{secondary}#2}\hfil}%
+    \vskip7pt
+    \hbox to \linewidth{\hfil{\BodyFont #3}\hfil}%
+    \vfil}%
+  \nointerlineskip}
+
+\NewDocumentCommand{\ResumeSection}{O{10.15pt}mG{}}{%
+  \par\nointerlineskip
+  \vbox{%
+    \hbox{{\color{accent}\rmfamily\CJKfamily{resume-title}%
+      \fontsize{11}{12}\selectfont\bfseries #2\if\relax\detokenize{#3}\relax\else\enspace\textit{#3}\fi}}%
+    \vskip4.56pt
+    {\color{accent}\hrule height .4pt width \linewidth}%
+    \vskip#1}%
+  \nointerlineskip}
+
+% [字号] 左侧文字、右侧日期。长标题自然换行，日期保留独立宽度。
+\NewDocumentCommand{\ResumeEntry}{O{9.5}mm}{%
+  \par\nointerlineskip
+  \setbox2=\vbox{\fontsize{#1}{17}\selectfont\CJKfamily{resume-title}\lineskiplimit=0pt\lineskip=1pt
+    \setbox0=\hbox{\ResumeDate{#3}}%
+    \noindent\hspace*{\EntryIndent}%
+    \parbox[t]{\dimexpr\linewidth-\EntryIndent-\wd0-12pt\relax}{\raggedright #2}%
+    \hfill\makebox[\wd0][r]{\ResumeDate{#3}}\par}%
+  \dimen0=\dimexpr\ht2+\dp2\relax
+  \ifdim\dimen0<11pt \vbox to 11pt{\unvbox2\vfil}\else\box2\fi
+  \vskip6pt\nointerlineskip}
+
+\newcommand{\ResumeText}[1]{%
+  \par\nointerlineskip
+  \vbox{\BodyFont\leftskip=\EntryIndent\noindent #1\par}%
+  \vskip3.48pt\nointerlineskip}
+
+\newcommand{\ResumeItem}[1]{%
+  \par\nointerlineskip
+  \vbox{\BodyFont\leftskip=12pt\noindent
+    \llap{\makebox[12pt][c]{\textbullet\hspace{2.1pt}}}#1\par}%
+  \vskip3.93pt\nointerlineskip}
+
+% 二级项目符号：相对一级正文再向右 12pt，换行与二级正文对齐。
+\newlength{\SubItemIndent}
+\setlength{\SubItemIndent}{24pt}
+\newcommand{\ResumeSubItem}[1]{%
+  \par\nointerlineskip
+  \vbox{\BodyFont\leftskip=\SubItemIndent\noindent
+    \llap{\makebox[12pt][c]{-\hspace{2.1pt}}}#1\par}%
+  \vskip3.93pt\nointerlineskip}
+
+\newcommand{\SectionGap}{\vskip12.6pt\nointerlineskip}
+\newcommand{\ProjectGap}{\vskip8.97pt\nointerlineskip}
+\newcommand{\CompactItems}{\renewcommand{\BodyFont}{\normalfont\fontsize{9}{11}\selectfont\lineskiplimit=0pt\lineskip=1pt}}
