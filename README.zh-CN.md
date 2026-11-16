@@ -14,12 +14,12 @@
   <tr>
     <td width="50%" align="center">
       <h3>中文样板</h3>
-      <a href="resume-zh.pdf"><img src="preview-zh.png?v=36a5d72a105a" alt="中文简历" width="100%" /></a>
+      <a href="resume-zh.pdf"><img src="https://raw.githubusercontent.com/Parsnip77/Verso/main/preview-zh.png?v=36a5d72a105a" alt="中文简历" width="100%" /></a>
       <p><a href="resume-zh.pdf">查看 PDF</a></p>
     </td>
     <td width="50%" align="center">
       <h3>英文样板</h3>
-      <a href="resume-en.pdf"><img src="preview-en.png?v=85a77772042c" alt="English resume" width="100%" /></a>
+      <a href="resume-en.pdf"><img src="https://raw.githubusercontent.com/Parsnip77/Verso/main/preview-en.png?v=85a77772042c" alt="English resume" width="100%" /></a>
       <p><a href="resume-en.pdf">查看 PDF</a></p>
     </td>
   </tr>
