@@ -1,15 +1,29 @@
-# Verso
+<h1 align="center">Verso</h1>
 
-A compact XeLaTeX resume template for tech careers, with matching English and Chinese samples.
+<p align="center">A compact XeLaTeX resume template for tech careers, with English and Chinese examples.</p>
 
-English | [简体中文](README.zh-CN.md)
+<p align="center">
+  <a href="README.md"><img src="https://img.shields.io/badge/English-25364A?style=for-the-badge" alt="English" height="28" /></a>
+  &nbsp;
+  <a href="README.zh-CN.md"><img src="https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-E9EEF3?style=for-the-badge" alt="简体中文" height="28" /></a>
+</p>
 
 ## Preview
 
-| English | Chinese |
-| :---: | :---: |
-| [![English sample](preview-en.png)](resume-en.pdf) | [![Chinese sample](preview-zh.png)](resume-zh.pdf) |
-| [Download PDF](resume-en.pdf) | [Download PDF](resume-zh.pdf) |
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <h3>English sample</h3>
+      <a href="resume-en.pdf"><img src="preview-en.png" alt="English resume" width="100%" /></a>
+      <p><a href="resume-en.pdf">View PDF</a></p>
+    </td>
+    <td width="50%" align="center">
+      <h3>Chinese sample</h3>
+      <a href="resume-zh.pdf"><img src="preview-zh.png" alt="中文简历" width="100%" /></a>
+      <p><a href="resume-zh.pdf">View PDF</a></p>
+    </td>
+  </tr>
+</table>
 
 ## Features
 
@@ -19,7 +33,7 @@ English | [简体中文](README.zh-CN.md)
 - Two list levels: bullet points and indented hyphens, with aligned wrapped text.
 - Shared styling, bundled fonts and editable accent colors.
 
-All sample identities, institutions, projects and achievements are **fictional**. Contact details and URLs use placeholder values and `example.com`.
+The two examples use independent content to demonstrate different layouts and levels of detail. All sample identities, institutions, projects and achievements are **fictional**. Contact details and URLs use placeholder values and `example.com`.
 
 ## Get started
 

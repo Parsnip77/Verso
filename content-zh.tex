@@ -9,11 +9,14 @@
 \ResumeEntry{\textbf{云栈科技}\quad 后端开发实习生\quad 数据基础设施组}{2025.06 -- 2025.09}
 \ResumeItem{\textbf{异步任务平台：}参与多租户任务服务开发，使用 Go、PostgreSQL 与 Redis 实现任务编排、状态查询和失败重试。}
 \ResumeSubItem{补充幂等键与指数退避机制；在每日 20 万次任务的回放测试中，重复执行率由 0.8\% 降至 0.1\% 以下。}
-\ResumeItem{\textbf{性能与可观测性：}优化热点查询与复合索引，接口 P95 延迟由 240 ms 降至 135 ms；增加追踪与队列积压告警。}
+\ResumeItem{\textbf{性能与可观测性：}通过慢查询分析与复合索引优化热点接口，在相同压测负载下，将 P95 延迟由 240 ms 降至 135 ms。}
+\ResumeSubItem{接入 OpenTelemetry 链路追踪与 Prometheus 指标，配置队列积压、任务超时和连接池饱和告警，并完善值班排查手册。}
+\ResumeItem{\textbf{交付协作：}独立完成任务取消接口的方案评审、实现与灰度发布，补充 26 个边界用例，参与每周代码评审和故障复盘。}
 \ProjectGap
 \ResumeEntry{\textbf{星湖软件}\quad 数据工程实习生\quad 分析平台组}{2024.07 -- 2024.09}
 \ResumeItem{\textbf{数据质量：}为 12 条每日批处理链路补充空值、唯一性和新鲜度检查，将质量校验纳入 Airflow 工作流。}
-\ResumeItem{\textbf{增量处理：}使用 Python 与 SQL 改造全量同步任务，加入水位线与回补机制；日常处理耗时由 48 分钟降至 19 分钟。}
+\ResumeItem{\textbf{增量处理：}使用 Python 与 SQL 改造全量同步任务，加入水位线与回补机制，日常处理耗时由 48 分钟降至 19 分钟。}
+\ResumeSubItem{将原始数据、明细数据和指标聚合分层建模，统一时区与去重口径，支持迟到数据重跑，并为产品看板补充字段血缘说明。}
 
 \SectionGap
 \ResumeSection{项目经历}{Projects}
@@ -22,11 +25,21 @@
 \ResumeSubItem{采用至少一次投递语义，以幂等处理避免业务重复写入；通过故障注入验证工作节点崩溃后的任务恢复。}
 \ResumeSubItem{在 4 核 8 GB 本地测试环境下，8 个工作节点处理吞吐达 3,200 tasks/s，调度 P95 延迟低于 80 ms。}
 \ResumeItem{\textbf{工程实践：}使用 Docker Compose 提供一键启动，编写集成测试与基准测试，并通过 GitHub Actions 自动执行检查。}
+\ResumeSubItem{以容器暂停、网络断连和重复投递模拟异常场景，验证租约回收、优雅停机与死信重放，记录关键设计取舍及复现实验步骤。}
 \ProjectGap
 \ResumeEntry{\textbf{TraceLens 服务日志检索平台}\quad \ResumeLink{https://example.com/demo/tracelens}{在线演示}}{2025.03 -- 2025.05}
 \ResumeItem{\textbf{检索服务：}使用 FastAPI、OpenSearch 与 React 搭建结构化日志查询界面，支持时间范围、服务名与错误码组合筛选。}
 \ResumeSubItem{实现基于角色的访问控制与敏感字段脱敏；使用 200 万条合成日志验证分页、聚合与查询结果一致性。}
 \ResumeItem{\textbf{质量保障：}补充 API 契约测试与浏览器端回归测试，将常见问题定位过程整理成可复用的排查手册。}
+\ResumeItem{\textbf{交互体验：}实现查询条件保存、分享链接与高亮定位，支持从聚合视图下钻到单条日志，保留筛选上下文，便于开发者复现跨服务错误并协作排查。}
+
+\ProjectGap
+\ResumeEntry{\textbf{FeatureDock 特征计算与在线服务}\quad \ProjectLink{https://example.com/code/featuredock}{featuredock}}{2024.10 -- 2025.02}
+\ResumeItem{\textbf{数据管道：}面向电商推荐场景，使用 Python、DuckDB 和 Parquet 构建离线特征流水线，管理用户行为窗口与商品统计特征。}
+\ResumeSubItem{定义特征注册、版本管理和依赖校验流程，通过时间点关联规避未来信息泄漏，使用 500 万条合成行为记录进行回放验证。}
+\ResumeItem{\textbf{在线服务：}以 Redis 存储最新特征，提供批量读取与默认值回退接口，在 100 并发客户端测试中，读取 P95 延迟为 18 ms。}
+\ResumeItem{\textbf{一致性验证：}对比离线计算与在线读取结果，加入缺失率、分布漂移和过期比例检查，并提供可复现的基准脚本与使用文档。}
+\ResumeSubItem{为回填任务设计分区级检查点与断点续跑，区分特征事件时间和数据入库时间，通过延迟到达、重复写入与部分失败用例验证结果完整性，并记录恢复过程。}
 
 \SectionGap
 \ResumeSection{专业技能}{Skills}
@@ -37,6 +50,7 @@
 \endgroup
 \SectionGap
 \ResumeSection{荣誉与活动}{Awards \& Activities}
-\ResumeText{海岚理工大学软件创新赛一等奖（2025）；校开源社团维护者（2024--2026），组织 6 次代码阅读与技术分享。}
+\ResumeItem{\textbf{竞赛与荣誉：}海岚理工大学软件创新赛一等奖（2025），负责服务端设计与现场演示，完成原型交付及性能评估。}
+\ResumeItem{\textbf{开源与分享：}校开源社团维护者（2024--2026），组织 6 次代码阅读与技术分享，带领 4 人小组维护课程实验工具并编写贡献指南。}
 \vskip6pt
 \ResumeText{\color{secondary}\fontsize{8}{10}\selectfont 虚构样板：所有人物、机构、项目与指标均为排版演示；联系方式和链接为示例地址。}
